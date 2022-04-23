@@ -1,0 +1,72 @@
+{
+  "extends": ["airbnb", "airbnb/hooks", "next/core-web-vitals"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": "off",
+    "@typescript-eslint/indent": ["error", 2, { 
+      "SwitchCase": 1,
+      "ignoredNodes": ["TSTypeParameterInstantiation"]
+    }],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "comma"
+        },
+        "singleline": {
+          "delimiter": "comma"
+        },
+        "overrides": {
+          "interface": {
+            "multiline": {
+              "delimiter": "semi"
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": true
+            }
+          }
+        }
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc" },
+        "groups": [
+          ["builtin", "external"],
+          ["index", "internal", "parent", "sibling", "unknown"],
+          "object"
+        ]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  }
+}
